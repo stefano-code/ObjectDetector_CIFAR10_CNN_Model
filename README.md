@@ -53,3 +53,25 @@ x_test = x_test.astype('float32') / 255
 
 y_train = to_categorical(y_train, 10)
 y_test = to_categorical(y_test, 10)
+
+---
+
+## 🧠 Model Architecture
+
+The model is a deep Convolutional Neural Network built using Sequential API.
+
+Structure:
+- Multiple Conv2D layers with ReLU activation
+- MaxPooling2D layers for downsampling
+- Dropout layers to reduce overfitting
+- Fully connected Dense layers
+- Final Softmax layer for classification
+
+Simplified architecture:
+Conv2D → ReLU → Conv2D → ReLU → MaxPooling → Dropout
+Conv2D → ReLU → Conv2D → ReLU → MaxPooling → Dropout
+Conv2D → ReLU → Conv2D → ReLU → MaxPooling → Dropout
+Flatten → Dense(512) → Dropout → Dense(128) → Dense(10)
+---
+
+
