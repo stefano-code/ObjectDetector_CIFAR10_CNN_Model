@@ -91,5 +91,69 @@ model.compile(
 ```
 
 ---
+## 🚀 Training
+
+The model is trained using:
+
+- Batch size: 256
+- Epochs: 20
+- Validation data: CIFAR-10 test set
+```python 
+history = model.fit(
+    x_train, y_train,
+    batch_size=256,
+    epochs=20,
+    validation_data=(x_test, y_test)
+)
+```
+
+---
+## 📈 Evaluation
+After training, the model is evaluated on the test dataset:
+```python 
+score = model.evaluate(x_test, y_test)
+```
+This returns:
+- Test loss
+- Test accuracy
+
+---
+## 🖼️ Data Visualization
+Some sample images from the dataset are displayed to understand the input data distribution.
+
+---
+## 📦 Requirements
+To run this project, install the required libraries:
+```python 
+pip install tensorflow keras numpy matplotlib
+```
+---
+
+## ▶️ How to Run
+1. Clone the repository:
+```python
+git clone https://github.com/stefano-code/cifar10-cnn.git
+cd cifar10-cnn
+```
+2. Open the notebook:
+```python
+jupyter notebook
+```
+3. Run all cells sequentially.
+
+---
+
+## 📌 Notes
+- This model is a baseline CNN for CIFAR-10 classification.
+- Performance can be improved using:
+    - Data augmentation
+    - Batch normalization
+    - Deeper architectures (ResNet, VGG, etc.)
+
+---
+## 📜 License
+This project is released under MIT License.
+
+---
 
 
