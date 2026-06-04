@@ -1,2 +1,55 @@
-# ObjectDetector_CIFAR10_CNN_Model
-This is a Multi-Class Classification problem (10 classes) CNN Model - Language: Python Deep Learning Package: Keras Dataset: CIFAR10 dataset available with Keras
+# CIFAR-10 Image Classification with CNN (Keras / TensorFlow)
+
+This project implements a **Convolutional Neural Network (CNN)** using Keras (TensorFlow backend) to classify images from the **CIFAR-10 dataset**. The model is trained to recognize 10 different object categories such as airplanes, cars, birds, cats, and more.
+
+---
+
+## 📌 Project Overview
+
+The goal of this project is to build and train a deep learning model capable of performing image classification on small RGB images (32x32 pixels).
+
+The workflow includes:
+- Loading and exploring the CIFAR-10 dataset
+- Preprocessing images and labels
+- Building a CNN architecture
+- Training the model
+- Evaluating performance on test data
+
+---
+
+## 📊 Dataset: CIFAR-10
+
+The CIFAR-10 dataset consists of:
+- **60,000 images** (32x32 RGB)
+- **10 classes**
+- **50,000 training images**
+- **10,000 test images**
+
+### Classes:
+- Airplane ✈️  
+- Automobile 🚗  
+- Bird 🐦  
+- Cat 🐱  
+- Deer 🦌  
+- Dog 🐶  
+- Frog 🐸  
+- Horse 🐴  
+- Ship 🚢  
+- Truck 🚚  
+
+---
+
+## 🧹 Data Preprocessing
+
+Before training, the dataset is processed as follows:
+
+- Images are converted to `float32`
+- Pixel values are normalized to the range `[0, 1]`
+- Labels are converted to **one-hot encoding** using `to_categorical`
+
+```python
+x_train = x_train.astype('float32') / 255
+x_test = x_test.astype('float32') / 255
+
+y_train = to_categorical(y_train, 10)
+y_test = to_categorical(y_test, 10)
