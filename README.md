@@ -53,6 +53,7 @@ x_test = x_test.astype('float32') / 255
 
 y_train = to_categorical(y_train, 10)
 y_test = to_categorical(y_test, 10)
+```
 
 ---
 
@@ -67,11 +68,28 @@ Structure:
 - Fully connected Dense layers
 - Final Softmax layer for classification
 
-Simplified architecture:
-Conv2D → ReLU → Conv2D → ReLU → MaxPooling → Dropout
-Conv2D → ReLU → Conv2D → ReLU → MaxPooling → Dropout
-Conv2D → ReLU → Conv2D → ReLU → MaxPooling → Dropout
-Flatten → Dense(512) → Dropout → Dense(128) → Dense(10)
+### Simplified architecture:
+- Conv2D → ReLU → Conv2D → ReLU → MaxPooling → Dropout
+- Conv2D → ReLU → Conv2D → ReLU → MaxPooling → Dropout
+- Conv2D → ReLU → Conv2D → ReLU → MaxPooling → Dropout
+- Flatten → Dense(512) → Dropout → Dense(128) → Dense(10)
+---
+
+## ⚙️ Compilation Settings
+
+The model is compiled using:
+
+- Loss function: Categorical Crossentropy
+- Optimizer: Adam
+- Metrics: Accuracy
+```python 
+model.compile(
+    loss='categorical_crossentropy',
+    optimizer='adam',
+    metrics=['accuracy']
+)
+```
+
 ---
 
 
